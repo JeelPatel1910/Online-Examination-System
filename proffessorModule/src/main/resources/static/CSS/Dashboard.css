@@ -1,0 +1,131 @@
+@charset "ISO-8859-1";
+*{
+  margin:  0;
+  padding: 0;
+  box-sizing:border-box;
+}
+body { 
+	font-family: segoe-ui_normal,Segoe UI,Segoe,Segoe WP,Helvetica Neue,Helvetica,sans-serif;
+	display: grid;
+	grid-template-areas: 
+    "header header header"
+    "sidebar section section"
+    "footer footer footer";
+	grid-template-rows: 68px 1fr 20px;
+	grid-template-columns: 15% 1fr 18%;
+	grid-gap: 2px;
+    height: 100vh;
+    margin:  0px;  
+    font-size:20px;
+    overflow-x:hidden;
+    padding: 2px;
+ }
+
+header {
+	background:rgba(204, 204, 204,0.9);
+	grid-area: header;
+  
+}
+.nav
+{
+  float: right;
+  margin-right:60px;
+}
+.nav li
+{
+  display: inline-block;
+  
+	margin-left: 40px;
+  margin-top:30px;
+  font-family: 'Flamenco';
+  padding: 10 px 10 px;
+	color: #000000;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 90%;
+	font-weight: 500;
+}
+.nav li:hover
+{
+  
+  border-bottom: 2px solid #e6ccb3;
+  background-color:  rgb(191, 191, 191);
+  position:relative;
+}
+sidebar{
+	background: #e6ccb3;
+	grid-area: sidebar; 
+}
+.dropbtn {
+  background-color: #e6ccb3;
+  text-transform: uppercase;
+  color: Black;
+  width:200px;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  text-transform: uppercase;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  font-size: 16px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f9f2ec}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #e6ccb3;
+} 
+section {
+	background:#ffffff;
+	grid-area: section;    
+}
+.box
+{
+  float :center;
+}
+.form-container
+{
+  border-radius: 2px;
+  background-color: #f2f2f2;
+  padding:50px;
+  margin:10% 20%;
+  width:60%;
+  float:center;
+}
+
+footer {
+	background: rgba(204, 204, 204,0.9);
+	grid-area: footer;
+  
+}
+
+
+
+header,sidebar, section,  footer {
+	
+}
