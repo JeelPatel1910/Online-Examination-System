@@ -1,26 +1,27 @@
 package proffessor.model.entity;
 //import java.util.Date;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "exams")
 public class ExamEntity {
 
-	@Override
-	public String toString() {
-		return "ExamEntity [ExamName=" + ExamName + ", ExamDate=" + ExamDate + ", Marks=" + Marks + "]";
-	}
+	
 
+	
 	@Id
 	@GeneratedValue
 	@Column(length = 100)
 	private int id;
 
+	
 	@Column(nullable = false, length = 100)
 	private String ExamName;
 
@@ -30,13 +31,17 @@ public class ExamEntity {
 	@Column(nullable = false, length = 50)
 	private String Marks;
 
-	@Column(nullable = false, length = 50)
-	private String Time;
-
 	@Column(nullable = false, length = 100)
 	private String ExamType;
-
 	
+	@Column( length = 50)
+	private String StartTime="00";
+	
+	@Column( length = 50 )
+	private String EndTime="00";
+
+	@Column(length=20)
+	private boolean Status=false;
 
 	public String getExamName() {
 		return ExamName;
@@ -61,14 +66,6 @@ public class ExamEntity {
 	public void setMarks(String marks) {
 		Marks = marks;
 	}
-	
-	public String getTime() {
-		return Time;
-	}
-
-	public void setTime(String time) {
-		Time = time;
-	}
 
 	public String getExamType() {
 		return ExamType;
@@ -77,4 +74,30 @@ public class ExamEntity {
 	public void setExamType(String examType) {
 		ExamType = examType;
 	}
+
+	public String getStartTime() {
+		return StartTime;
+	}
+
+	public void setStartTime(String startTime) {
+		StartTime = startTime;
+	}
+
+	public String getEndTime() {
+		return EndTime;
+	}
+
+	public void setEndTime(String endTime) {
+		EndTime = endTime;
+	}
+
+	public boolean isStatus() {
+		return Status;
+	}
+
+	public void setStatus(boolean status) {
+		Status = status;
+	}
+	
+	
 }

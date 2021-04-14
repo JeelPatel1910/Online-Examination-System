@@ -33,22 +33,15 @@
   </div>
   
    <div class="col-7">
-    <label for="Exam Date">Exam Date:</label>
+    <label for="Exam Date">Exam Date</label>
     <input type="date" class="form-control" name="ExamDate" id="ExamDate">
   </div>
   
     <div class="col-4">
-    <label for="Option 3">Marks: </label>
+    <label for="Marks">Marks: </label>
     <input type="text" class="form-control" name="Marks" id="Marks">
   </div>
   
-   <div class="col-4">
-    <label for="Option 3">Exam time: </label>
-    <input type="text" class="form-control" name="Time" id="Time" value="minutes">
-  </div>
-   
- 
-   
   <br>
    <div class="col-7">
    <label for="Exam-type">Exam-Type:</label>
@@ -58,7 +51,9 @@
       <option value="Final-Exams">Final-Exams</option>
     </select>  
      </div>
+     
       <br>
+	
 	<input type="submit" id="submit" value="CREATE" name="submit" class="btn btn-primary"> 
   </form:form>
   </div>
@@ -66,7 +61,7 @@
 </div>
 </section>
  
- <footer>footer</footer>
+ <footer></footer>
  
 </body>
 </html>

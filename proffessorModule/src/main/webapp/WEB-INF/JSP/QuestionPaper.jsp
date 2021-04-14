@@ -7,7 +7,7 @@
     <%@page import="proffessor.service.implementation.ExamServiceImplment" %>
     <%@page import="proffessor.service.ExamService" %>
     <%@page import="proffessor.model.entity.ExamEntity" %>
-    <jsp:useBean id="examServiceImp" class="proffessor.service.implementation.ExamServiceImplment" scope="page"/>
+    <jsp:useBean id="QueryImp" class="proffessor.service.QueryImplement" scope="page"/>
     
 <!DOCTYPE html>
 <html>
@@ -35,13 +35,29 @@
     <div class = "box">
  <div class = "form-row"> 
   <form:form method="POST" action="/redirect2" modelAttribute="QuestionPaper">
-  Enter a Question:</r>
+   
+   Exams:<select name="ExamName" class="form-control" id="ExamName">
+      <% 
+          ExamService exams =(ExamService)request.getAttribute("examService");
+      
+           List<String> list = new ArrayList<>();
+            list= exams.getExams();
+            
+            for(int i=0;i<list.size();i++){
+        %>
+        <option value="<%=list.get(i)%>"><%=list.get(i)%></option>
+            <%
+            }
+            %>
+            </select>
+            <br>
+  Enter a Question:<br>
    <div class="col-10">
-  Question:<input class="form-control" type="text"  name="Option1" id="Option1" maxlength="65435">
+  Question:<input type="text" class="form-control"  name="Question" id="Question" maxlength="65435">
    </div>
-  </br> 
+  <br> 
  
-  Options:</br>
+  Options:<br>
   <div class="col-7">
     <label for="Option 1">Option 1 </label>
     <input type="text" class="form-control"  name="Option1" id="Option1" maxlength="65435">
@@ -62,15 +78,22 @@
   </div>
    <div class="col-7">
     <label for="Answer"> Answer </label>
-    <input type="text" class="form-control"  name="Answer" id="Question" maxlength="65435">
+    <input type="text" class="form-control"  name="Answer" id="Answer" maxlength="65435">
   </div>
-  </br>
-  <button type="button" class="btn btn-success">ADD</button>
-	<input type="submit" id="submit" value="SUBMIT" name="submit" class="btn btn-primary"> 
+  <br>
+  <button type="submit" class="btn btn-success" name="Add" value="Add">ADD</button>
+	<input type="submit" id="Submit" value="Submit" name="Submit" class="btn btn-primary"> 
   </form:form>
   </div>
 </div>
 </div>
+
+
+
+
 </section>
+
+
+
 </body>
 </html>

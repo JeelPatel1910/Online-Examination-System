@@ -23,6 +23,7 @@ public class ExamServiceImplment implements ExamService {
 
 	@Override
 	public void saveExam(ExamEntity exam) {
+		
 		examRepository.save(exam);
 	}
 
@@ -35,11 +36,46 @@ public class ExamServiceImplment implements ExamService {
 
 
 	@Override
-	public List<ExamEntity> getExams() {
-		List<ExamEntity> exams = new ArrayList<>();
-		exams = examRepository.findAll();
+	public List<String> getExams() {
+		List<String> exams = new ArrayList<>();
+		exams = examRepository.getExams();
 		return exams;
 	}
+
+
+	@Override
+	public void setExamStatus(QuestionsEntity questions) {
+		String examName = questions.getExamName(); 
+		examRepository.setExamStatus(examName);
+		
+	}
+
+
+	@Override
+	public List<String> getExamsByStatus(Boolean status) {
+		List<String> exams = new ArrayList<>();
+		
+		if(status=true) {
+		exams = examRepository.getExamsByStatus();
+		}
+		return exams;
+		
+	}
+
+
+	@Override
+	public String getExamTypeByExamName(String examName) {
+	    String examType = examRepository.getExamTypeByExamName(examName);
+		return examType;
+	}
+
+
+	@Override
+	public String getMarksByExamName(String examName) {
+		String marks = examRepository.getMarksByExamName(examName);
+		return marks;
+	}
+
 
 
 	

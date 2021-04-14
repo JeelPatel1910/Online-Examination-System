@@ -19,7 +19,7 @@ public class QuestionsEntity {
 	@Column(nullable = false, length = 300)
 	private String ExamName;
 
-	@Column(nullable = false, length = 300)
+	@Column(nullable = false, length = 500)
 	private String Question;
 
 	@Column(nullable = false, length = 100)
